@@ -1,0 +1,20 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "problemMatcher": [],
+    "tasks": [
+        {
+            "label": "compile",
+            "type": "shell",
+            "command": "cp '${file}' '${config:amxx_script_dir}'; echo '' | ./compile.exe ${fileBasename}; echo ''; cp compiled/${fileBasenameNoExtension}.amxx '${config:amxx_plugins_dir}'",
+            "options": {
+                "cwd": "${config:amxx_script_dir}",
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": "**.sma",
+            },
+        },
+    ],
+}
