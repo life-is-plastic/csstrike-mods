@@ -25,7 +25,7 @@ public plugin_init() {
 
 public hook(victim) {
     new attacker = get_user_attacker(victim)
-    if (attacker < 1 || attacker > MAX_PLAYER_COUNT) {
+    if (attacker == victim || attacker < 1 || attacker > MAX_PLAYER_COUNT) {
         return
     }
     new Float:now = get_gametime()
